@@ -1,0 +1,17 @@
+{
+  "name": "Achilleas Ntalagiorgos",
+  "role": "Full-stack Engineer",
+  "location": "Thessaloniki, Greece",
+  "email": "your@email",
+  "social": {
+    "github": "https://github.com/your-handle",
+    "linkedin": "https://www.linkedin.com/in/your-handle",
+    "x": null,
+    "website": null
+  },
+  "assets": {
+    "resumeUrl": "/resume.pdf",
+    "ogImage": "/og/home.png",
+    "favicon": "/favicon.ico"
+  }
+}

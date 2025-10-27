@@ -1,0 +1,14 @@
+{
+  "brand": { "label": "Achilleas N.", "href": "#home" },
+  "items": [
+    { "id": "home", "label": "Home", "href": "#home", "icon": "home", "hidden": false },
+    { "id": "projects", "label": "Projects", "href": "#projects", "icon": "grid", "hidden": false },
+    { "id": "experience", "label": "Experience", "href": "#experience", "icon": "briefcase", "hidden": false },
+    { "id": "studies", "label": "Studies", "href": "#studies", "icon": "book", "hidden": false },
+    { "id": "resume", "label": "Resume", "href": "#resume", "icon": "file", "hidden": false }
+  ],
+  "footer": {
+    "email": { "label": "Email", "href": "mailto:achilleasntalagiorgos@gmail.com", "icon": "mail" },
+    "backToTop": { "label": "Top", "href": "#home", "icon": "arrow-up" }
+  }
+}
