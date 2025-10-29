@@ -5,7 +5,8 @@ import navigation from "../content/navigation.json";
 type NavItem = { id: string; label: string; href?: string; hidden?: boolean };
 
 const prefersReducedMotion = () =>
-  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const getHeaderOffset = () => {
   if (typeof document === "undefined") return 0;
@@ -14,7 +15,8 @@ const getHeaderOffset = () => {
 };
 
 const smoothScrollTo = (el: HTMLElement) => {
-  const y = el.getBoundingClientRect().top + window.scrollY - (getHeaderOffset() + 12);
+  const y =
+    el.getBoundingClientRect().top + window.scrollY - (getHeaderOffset() + 12);
   if (prefersReducedMotion()) {
     window.scrollTo(0, y);
   } else {
@@ -35,7 +37,9 @@ const Menu: React.FC = () => {
 
   // Measure item height once mounted for the sliding indicator
   useEffect(() => {
-    const first = listRef.current?.querySelector("li[data-menu-item]") as HTMLLIElement | null;
+    const first = listRef.current?.querySelector(
+      "li[data-menu-item]"
+    ) as HTMLLIElement | null;
     if (first) itemHeightRef.current = first.offsetHeight + 12; // include gap (mt-3)
   }, []);
 
@@ -109,13 +113,17 @@ const Menu: React.FC = () => {
   return (
     <nav aria-label="Section navigation" className="md:w-1/3 md:pl-12 w-full">
       <div className="relative rounded-2xl border border-gray-800/80 bg-gray-900/40 p-4 backdrop-blur-sm">
-        <h2 className="text-sm uppercase tracking-wider text-gray-400 mb-3">Menu</h2>
+        <h2 className="text-sm uppercase tracking-wider text-gray-400 mb-3">
+          Menu
+        </h2>
 
         {/* Sliding amber indicator */}
         <div
           aria-hidden
           className="absolute left-0 top-[4.25rem] h-10 w-[3px] rounded-full bg-gradient-to-b from-amber-300 to-amber-500 shadow-[0_0_12px_rgba(251,191,36,0.35)] transition-transform duration-300"
-          style={{ transform: `translateY(${activeIndex * itemHeightRef.current}px)` }}
+          style={{
+            transform: `translateY(${activeIndex * itemHeightRef.current}px)`,
+          }}
         />
 
         <ul
@@ -128,11 +136,7 @@ const Menu: React.FC = () => {
             const isActive = activeId === item.id;
             const displayNumber = (idx + 1).toString().padStart(2, "0");
             return (
-              <li
-                key={item.id}
-                data-menu-item
-                className="relative"
-              >
+              <li key={item.id} data-menu-item className="relative">
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "true" : undefined}
@@ -149,7 +153,9 @@ const Menu: React.FC = () => {
                   <span className="text-xs tabular-nums text-gray-500 group-hover:text-amber-200 w-8">
                     {displayNumber}
                   </span>
-                  <span className="font-medium tracking-tight">{item.label}</span>
+                  <span className="font-medium tracking-tight">
+                    {item.label}
+                  </span>
                 </a>
 
                 {/* Hairline divider for rhythm */}
