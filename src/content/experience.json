@@ -17,12 +17,13 @@
         { "label": "Defects Resolved", "value": "15+" }
       ],
       "bullets": [
-        "Shipped Laravel + Vue services handling X req/s with p95 < 300ms.",
-        "Resolved 15+ production defects; error rate 2.3% → 0.6%.",
-        "Led code reviews for 6 devs; CI checks reduced regressions 25%."
+        "Developed and maintained software solutions using PHP (Laravel) and JavaScript (VueJS) ensuring robust performance and scalability.",
+        "Diagnosed and resolved critical bugs in production level applications, enhancing system reliability and user experience.",
+        "Acted as the Subject Matter Expert for complex web applications, delivering in-depth technical analysis, conducting code reviews and mentoring other team members within the application environment",
+        "Collaborated with cross-functional teams to design and implement innovative software solutions tailored to organizational needs.",
+        "Contributed to architectural decisions for scalable web applications, ensuring modular design and alignment with enterprise-level performance."
       ],
-      "tech": ["Laravel", "Vue.js", "MySQL", "Docker", "AWS"],
-      "links": [{ "label": "Team", "href": "#", "type": "secondary" }]
+      "tech": ["Laravel", "Vue.js", "MySQL", "Docker", "AWS"]
     },
     {
       "role": "Full-stack Developer",
@@ -36,9 +37,9 @@
         { "label": "Dashboards", "value": "Realtime" }
       ],
       "bullets": [
-        "Built Node + Strapi REST APIs integrating SQL/NoSQL stores.",
-        "Created cultural-institution UIs with React & React-Three-Fiber.",
-        "Delivered realtime sensor dashboards with PostgreSQL + websockets."
+        "Developed comprehensive Full-REST-APIs using Node.js and Strapi, seamlessly integrating with both SQL and NoSQL databases.",
+        "Designed and developed web applications for cultural institutions, leveraging React and React-Three-Fiber to create immersive experiences featuring advanced 3D graphics and modern web development techniques.",
+        "Utilized React and its associated libraries alongside PostgreSQL to implement real-time data visualization from sensor metrics, significantly enhancing user engagement and functionality."
       ],
       "tech": ["Node.js", "Strapi", "React", "R3F", "PostgreSQL"],
       "links": []
@@ -47,13 +48,13 @@
       "role": "Full-stack Developer",
       "company": "Terracom",
       "location": "Ioannina, Greece",
-      "start": "2023-07",
-      "end": "2023-08",
+      "start": "2022-07",
+      "end": "2022-08",
       "highlights": [],
       "bullets": [
         "Contributed to production web features and gained hands-on experience."
       ],
-      "tech": ["React", "Node.js"],
+      "tech": ["React", "Node.js", "HTML", "CSS"],
       "links": []
     }
   ]
