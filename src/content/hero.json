@@ -2,11 +2,11 @@
   "greeting": "👋 Hi, I’m",
   "name": "Achilleas Ntalagiorgos",
   "headline": {
-    "before": "I craft",
-    "highlight": "fast, accessible web apps",
-    "after": "that feel effortless to use."
+    "before": "Building and maintaining ",
+    "highlight": "Modern Web Applications ",
+    "after": "with a focus on Performance and Accessibility"
   },
-  "subheadline": "Full-stack engineer in Thessaloniki building reliable products with React, TypeScript, and Node. I love turning complex problems into clear, production-ready interfaces—without sacrificing performance or accessibility.",
+  "subheadline": "Software engineer placed in Thessaloniki developing and supporting reliable web apps. I love turning complex problems into clear, production-ready code without sacrificing performance or accessibility.",
   "badges": [
     "React",
     "TypeScript",
@@ -19,7 +19,12 @@
   "ctas": [
     { "label": "View Projects", "href": "#projects", "variant": "primary" },
     { "label": "Let’s Talk", "href": "#contact", "variant": "secondary" },
-    { "label": "Download CV", "href": "/resume.pdf", "variant": "link", "external": true }
+    {
+      "label": "Download CV",
+      "href": "/resume.pdf",
+      "variant": "link",
+      "external": true
+    }
   ],
   "microcopy": {
     "scrollHint": "Scroll",

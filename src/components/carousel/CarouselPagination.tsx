@@ -7,7 +7,7 @@ type Props = {
 };
 
 const CarouselPagination: React.FC<Props> = ({ count, index, onGoTo }) => (
-  <div className="mt-6 flex items-center justify-center gap-2">
+  <div className="mt-8 flex items-center justify-center gap-2">
     {Array.from({ length: count }).map((_, i) => (
       <button
         key={i}

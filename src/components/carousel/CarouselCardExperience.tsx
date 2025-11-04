@@ -55,7 +55,7 @@ const CarouselCardExperience: React.FC<Props> = ({ item: it, idx }) => {
         {/* Highlights */}
         {it.highlights && it.highlights.length > 0 && (
           <ul className="mt-4 grid grid-cols-3 gap-2">
-            {it.highlights.slice(0, 3).map((h, i) => (
+            {it.highlights.slice(0, 6).map((h, i) => (
               <li
                 key={i}
                 className="rounded-lg border border-gray-800/70 bg-gray-900/40 px-3 py-2 text-center"

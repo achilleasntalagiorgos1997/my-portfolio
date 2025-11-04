@@ -12,9 +12,15 @@
       "start": "2024-09",
       "end": "2025-09",
       "highlights": [
-        { "label": "Incidents", "value": "-30%" },
-        { "label": "p95 Latency", "value": "<300ms" },
-        { "label": "Defects Resolved", "value": "15+" }
+        { "label": "Frontend", "value": "VueJS" },
+        { "label": "Backend", "value": "Laravel" },
+        { "label": "APIs", "value": "REST/GraphQL" },
+        { "label": "Databases", "value": "MySQL" },
+        {
+          "label": "Ticketing, Management",
+          "value": "ServiceNow/Zendesk, Jira"
+        },
+        { "label": "Version Control", "value": "Git-GitHub-Docker" }
       ],
       "bullets": [
         "Developed and maintained software solutions using PHP (Laravel) and JavaScript (VueJS) ensuring robust performance and scalability.",
@@ -23,7 +29,15 @@
         "Collaborated with cross-functional teams to design and implement innovative software solutions tailored to organizational needs.",
         "Contributed to architectural decisions for scalable web applications, ensuring modular design and alignment with enterprise-level performance."
       ],
-      "tech": ["Laravel", "Vue.js", "MySQL", "Docker", "AWS"]
+      "tech": [
+        "Code Deployment",
+        "Bug-fixing",
+        "Maintenance",
+        "Testing",
+        "Code Review",
+        "Documentation",
+        "Cross-team Collaboration"
+      ]
     },
     {
       "role": "Full-stack Developer",
@@ -32,16 +46,24 @@
       "start": "2023-02",
       "end": "2024-07",
       "highlights": [
-        { "label": "APIs", "value": "Full REST" },
-        { "label": "3D Scenes", "value": "R3F" },
-        { "label": "Dashboards", "value": "Realtime" }
+        { "label": "Frontend", "value": "React/R3F" },
+        { "label": "Backend", "value": "Node.js" },
+        { "label": "APIs", "value": "REST/GraphQL" },
+        { "label": "CMS", "value": "Strapi" },
+        { "label": "Databases", "value": "SQL/NoSQL" }
       ],
       "bullets": [
         "Developed comprehensive Full-REST-APIs using Node.js and Strapi, seamlessly integrating with both SQL and NoSQL databases.",
         "Designed and developed web applications for cultural institutions, leveraging React and React-Three-Fiber to create immersive experiences featuring advanced 3D graphics and modern web development techniques.",
         "Utilized React and its associated libraries alongside PostgreSQL to implement real-time data visualization from sensor metrics, significantly enhancing user engagement and functionality."
       ],
-      "tech": ["Node.js", "Strapi", "React", "R3F", "PostgreSQL"],
+      "tech": [
+        "Deployment",
+        "Testing",
+        "Documentation",
+        "Client Communication",
+        "Mentoring"
+      ],
       "links": []
     },
     {
@@ -54,7 +76,7 @@
       "bullets": [
         "Contributed to production web features and gained hands-on experience."
       ],
-      "tech": ["React", "Node.js", "HTML", "CSS"],
+      "tech": ["Team work", "Agile Methodologies"],
       "links": []
     }
   ]

@@ -9,7 +9,7 @@ const HeroIntro: React.FC<Props> = ({ h }) => (
       {h.greeting} <span className="text-gray-200 font-medium">{h.name}</span>
     </p>
 
-    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+    <h1 className="text-4xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6">
       {h.headline.before}{" "}
       <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-cyan-300 bg-clip-text text-transparent">
         {h.headline.highlight}
