@@ -95,3 +95,45 @@ export interface RailItem {
   url: string;
   label?: string;
 }
+
+export type ProficiencyHint = "Proficient" | "Working" | "Familiar";
+
+/** Icon keys are strings in JSON; mapped to real components at runtime */
+export type IconKey =
+  | "layout" // Frontend
+  | "server" // Backend
+  | "gitBranch" // Versioning
+  | "database" // Databases
+  | "flask" // Testing
+  | "messageSquare" // Communication
+  | "users" // Collaboration
+  | "puzzle" // Problem Solving
+  | "repeat" // Adaptability
+  | "shieldCheck" // Ownership
+  | "box"
+  | "type"
+  | "fileCode"
+  | "sparkles"
+  | "wrench"
+  | "terminal"
+  | "cpu"
+  | "none"; // fallback when you don't want an icon
+
+export interface SkillItem {
+  label: string;
+  hint?: ProficiencyHint;
+  iconKey?: IconKey; // optional small icon next to chip label
+}
+
+export interface SkillCategory {
+  id: string; // unique key used for accordion state
+  title: string;
+  iconKey: IconKey; // category icon (mapped in component)
+  description?: string;
+  items: SkillItem[];
+}
+
+export interface SkillsContent {
+  hard: SkillCategory[];
+  soft: SkillCategory[];
+}

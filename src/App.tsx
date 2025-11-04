@@ -2,7 +2,7 @@ import Header from "./components/header/Header";
 import Home from "./pages/Home";
 import Experience from "./pages/Experience";
 import Studies from "./pages/Studies";
-import Resume from "./pages/Resume";
+import Skills from "./pages/Skills";
 import SideRail from "./components/side-rail/SideRail";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Home />
         <Experience />
         <Studies />
-        <Resume />
+        <Skills />
       </main>
     </>
   );

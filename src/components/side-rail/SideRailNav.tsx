@@ -4,7 +4,7 @@ import {
   FaThLarge,
   FaBriefcase,
   FaBook,
-  FaFileAlt,
+  FaBrain,
 } from "react-icons/fa";
 import type { NavItem } from "../../types/content";
 import SideRailIconButton from "./SideRailIconButton";
@@ -14,14 +14,12 @@ const iconForId = (id: string) => {
   switch (id) {
     case "home":
       return FaHome;
-    case "projects":
-      return FaThLarge;
     case "experience":
       return FaBriefcase;
     case "studies":
       return FaBook;
-    case "resume":
-      return FaFileAlt;
+    case "skills":
+      return FaBrain;
     default:
       return FaThLarge;
   }

@@ -1,0 +1,149 @@
+{
+  "hard": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "iconKey": "layout",
+      "description": "Modern, accessible UI with composable components and type-safe patterns.",
+      "items": [
+        { "label": "React", "hint": "Proficient", "iconKey": "box" },
+        { "label": "TypeScript", "hint": "Proficient", "iconKey": "type" },
+        {
+          "label": "JavaScript (ES6+)",
+          "hint": "Proficient",
+          "iconKey": "fileCode"
+        },
+        {
+          "label": "Tailwind CSS",
+          "hint": "Proficient",
+          "iconKey": "sparkles"
+        },
+        {
+          "label": "Accessibility (a11y)",
+          "hint": "Working",
+          "iconKey": "cpu"
+        },
+        {
+          "label": "State mgmt (hooks/context)",
+          "hint": "Proficient",
+          "iconKey": "wrench"
+        },
+        {
+          "label": "Build tools (Vite/Webpack)",
+          "hint": "Working",
+          "iconKey": "terminal"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "iconKey": "server",
+      "description": "Lightweight services, clean REST, validation, and auth.",
+      "items": [
+        { "label": "Node.js", "hint": "Working" },
+        { "label": "Express / Fastify", "hint": "Working" },
+        { "label": "REST API design", "hint": "Working" },
+        { "label": "Auth & sessions", "hint": "Working" },
+        { "label": "Type-safe validation (Zod)", "hint": "Working" },
+        { "label": "Docker (dev containers)", "hint": "Working" },
+        { "label": "Deploy (Vercel/containers)", "hint": "Familiar" }
+      ]
+    },
+    {
+      "id": "versioning",
+      "title": "Versioning & CI/CD",
+      "iconKey": "gitBranch",
+      "description": "Reliable delivery with reviews, checks, and automation.",
+      "items": [
+        { "label": "Git, GitHub flow", "hint": "Proficient" },
+        { "label": "PR reviews & code style", "hint": "Proficient" },
+        { "label": "GitHub Actions", "hint": "Working" },
+        { "label": "Semantic commits", "hint": "Working" },
+        { "label": "Lint/format (ESLint/Prettier)", "hint": "Proficient" }
+      ]
+    },
+    {
+      "id": "databases",
+      "title": "Databases",
+      "iconKey": "database",
+      "description": "Pragmatic modeling, indexing basics, and efficient queries.",
+      "items": [
+        { "label": "PostgreSQL", "hint": "Working" },
+        { "label": "SQLite", "hint": "Working" },
+        { "label": "Schema design & relations", "hint": "Working" },
+        { "label": "Indexing basics", "hint": "Working" },
+        { "label": "ORM familiarity (Prisma/Sequelize)", "hint": "Familiar" }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing & Quality",
+      "iconKey": "flask",
+      "description": "Confident changes with focused tests and static analysis.",
+      "items": [
+        { "label": "Jest / Vitest", "hint": "Working" },
+        { "label": "React Testing Library", "hint": "Working" },
+        { "label": "Type-safety mindset", "hint": "Proficient" },
+        { "label": "Static analysis", "hint": "Working" }
+      ]
+    }
+  ],
+  "soft": [
+    {
+      "id": "communication",
+      "title": "Communication",
+      "iconKey": "messageSquare",
+      "description": "Teaching background; explains complex topics simply; clear PRs & docs.",
+      "items": [
+        { "label": "Clarity & brevity", "hint": "Proficient" },
+        { "label": "Docs & PR descriptions", "hint": "Proficient" },
+        { "label": "Stakeholder updates", "hint": "Working" }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "title": "Collaboration",
+      "iconKey": "users",
+      "description": "Pair programming, constructive feedback, and predictable delivery.",
+      "items": [
+        { "label": "Pair programming", "hint": "Proficient" },
+        { "label": "Feedback culture", "hint": "Proficient" },
+        { "label": "Agile teamwork", "hint": "Working" }
+      ]
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "iconKey": "puzzle",
+      "description": "Algorithmic mindset; benchmarking and explicit trade-offs.",
+      "items": [
+        { "label": "Debugging & profiling", "hint": "Proficient" },
+        { "label": "Algorithmic thinking", "hint": "Proficient" },
+        { "label": "Benchmark & iterate", "hint": "Working" }
+      ]
+    },
+    {
+      "id": "adaptability",
+      "title": "Adaptability",
+      "iconKey": "repeat",
+      "description": "Easily switches languages/stacks; integrates new tools quickly.",
+      "items": [
+        { "label": "Context switching", "hint": "Proficient" },
+        { "label": "Learning velocity", "hint": "Proficient" },
+        { "label": "Tooling adoption", "hint": "Working" }
+      ]
+    },
+    {
+      "id": "ownership",
+      "title": "Ownership",
+      "iconKey": "shieldCheck",
+      "description": "End-to-end delivery; maintainability, performance, and clarity.",
+      "items": [
+        { "label": "E2E delivery", "hint": "Proficient" },
+        { "label": "Maintainability", "hint": "Proficient" },
+        { "label": "Quality mindset", "hint": "Proficient" }
+      ]
+    }
+  ]
+}

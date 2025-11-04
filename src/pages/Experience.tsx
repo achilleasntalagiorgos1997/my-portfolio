@@ -12,15 +12,17 @@ const Experience: React.FC = () => {
   );
 
   return (
-    <Carousel
-      eyebrow={data.intro?.eyebrow}
-      title={data.intro?.title || "Experience"}
-      subtitle={data.intro?.subtitle}
-      slides={items}
-      renderSlide={(item, idx) => (
-        <CarouselCardExperience item={item} idx={idx} />
-      )}
-    />
+    <div id="experience">
+      <Carousel
+        eyebrow={data.intro?.eyebrow}
+        title={data.intro?.title || "Experience"}
+        subtitle={data.intro?.subtitle}
+        slides={items}
+        renderSlide={(item, idx) => (
+          <CarouselCardExperience item={item} idx={idx} />
+        )}
+      />
+    </div>
   );
 };
 

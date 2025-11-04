@@ -14,13 +14,7 @@ type Props<T> = {
   renderSlide: (slide: T, index: number) => React.ReactNode;
 };
 
-function Carousel<T>({
-  eyebrow,
-  title,
-  subtitle,
-  slides,
-  renderSlide,
-}: Props<T>) {
+function Carousel<T>({ title, subtitle, slides, renderSlide }: Props<T>) {
   const { index, next, prev, goTo, allowAnim, trackRef } = useCarousel(
     slides.length
   );
@@ -28,7 +22,7 @@ function Carousel<T>({
   return (
     <section className="relative min-h-screen bg-gray-900 text-gray-100 px-6 md:px-8 py-20 overflow-hidden">
       <div className="mx-auto max-w-5xl">
-        <CarouselHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
+        <CarouselHeader title={title} subtitle={subtitle} />
 
         <div className="relative">
           <CarouselNavButtons
