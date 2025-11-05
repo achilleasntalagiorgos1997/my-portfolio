@@ -5,6 +5,7 @@ type Props = React.PropsWithChildren<{
   href: string;
   external?: boolean;
   variant?: CtaVariant; // "primary" | "secondary" | "link"
+  download?: boolean | string; // ✅ new prop
 }>;
 
 const classes: Record<CtaVariant, string> = {
@@ -19,13 +20,20 @@ const HeaderButton: React.FC<Props> = ({
   href,
   external,
   variant = "secondary",
+  download,
   children,
 }) => {
   const rel = external ? "noreferrer noopener" : undefined;
   const target = external ? "_blank" : undefined;
 
   return (
-    <a href={href} target={target} rel={rel} className={classes[variant]}>
+    <a
+      href={href}
+      target={target}
+      rel={rel}
+      className={classes[variant]}
+      download={download}
+    >
       {children}
     </a>
   );

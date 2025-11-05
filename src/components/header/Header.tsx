@@ -1,14 +1,12 @@
 import React from "react";
-import site from "../../content/site.json";
-import type { SiteInfo } from "../../types/content";
+import resumePdf from "../../assets/AchilleasNtalagiorgosCV.pdf";
 
 import HeaderLogo from "./HeaderLogo";
 import HeaderNav from "./HeaderNav";
 import HeaderButton from "./HeaderButton";
 
 const Header: React.FC = () => {
-  const s = site as SiteInfo;
-  const resumeUrl = s.assets?.resumeUrl ?? "/resume.pdf";
+  const resumeUrl = resumePdf; // ✅ This points to the bundled file
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-gray-800/60 bg-gray-950/70 backdrop-blur-md">
@@ -19,8 +17,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Example CTA — download resume */}
-          <HeaderButton href={resumeUrl} external variant="primary">
+          <HeaderButton href={resumeUrl} external variant="primary" download>
             Download Resume
           </HeaderButton>
         </div>
