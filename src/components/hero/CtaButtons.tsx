@@ -1,9 +1,8 @@
 import React from "react";
 import type { CtaVariant, HeroContent } from "../../types/content";
-
+import resumePdf from "../../assets/AchilleasNtalagiorgosCV.pdf";
 type Props = {
   ctas: HeroContent["ctas"];
-  resumeUrl: string;
 };
 
 const variantClasses: Record<CtaVariant, string> = {
@@ -14,14 +13,16 @@ const variantClasses: Record<CtaVariant, string> = {
   link: "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-gray-300 border border-transparent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-600 focus-visible:ring-offset-gray-950",
 };
 
-const CtaButtons: React.FC<Props> = ({ ctas, resumeUrl }) => (
+const CtaButtons: React.FC<Props> = ({ ctas }) => (
   <div className="flex flex-wrap items-center gap-3 mb-10">
     {ctas.map(({ label, href, external, variant }) => {
-      const finalHref = label.toLowerCase().includes("download")
-        ? resumeUrl
-        : href;
-      const rel = external ? "noreferrer noopener" : undefined;
-      const target = external ? "_blank" : undefined;
+      const isDownload = label.toLowerCase().includes("open");
+      const finalHref = isDownload ? resumePdf : href;
+
+      // Always open resume in a new tab
+      const isExternal = external || isDownload;
+      const rel = isExternal ? "noreferrer noopener" : undefined;
+      const target = isExternal ? "_blank" : undefined;
 
       return (
         <a
