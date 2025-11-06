@@ -6,32 +6,35 @@
       "iconKey": "layout",
       "description": "Modern, accessible UI with composable components and type-safe patterns.",
       "items": [
-        { "label": "React", "hint": "Proficient", "iconKey": "box" },
-        { "label": "TypeScript", "hint": "Proficient", "iconKey": "type" },
         {
           "label": "JavaScript (ES6+)",
-          "hint": "Proficient",
-          "iconKey": "fileCode"
+          "hint": "Proficient"
+        },
+        {
+          "label": "TypeScript",
+          "hint": "Familiar"
+        },
+        { "label": "React", "hint": "Proficient" },
+        { "label": "VueJS", "hint": "Proficient" },
+        {
+          "label": "State mgmt (hooks/context)",
+          "hint": "Proficient"
+        },
+        {
+          "label": "Redux / Pinia",
+          "hint": "Familiar"
+        },
+        {
+          "label": "CSS (SCSS/PostCSS)",
+          "hint": "Familiar"
         },
         {
           "label": "Tailwind CSS",
-          "hint": "Proficient",
-          "iconKey": "sparkles"
-        },
-        {
-          "label": "Accessibility (a11y)",
-          "hint": "Working",
-          "iconKey": "cpu"
-        },
-        {
-          "label": "State mgmt (hooks/context)",
-          "hint": "Proficient",
-          "iconKey": "wrench"
+          "hint": "Proficient"
         },
         {
           "label": "Build tools (Vite/Webpack)",
-          "hint": "Working",
-          "iconKey": "terminal"
+          "hint": "Skilled"
         }
       ]
     },
@@ -41,12 +44,12 @@
       "iconKey": "server",
       "description": "Lightweight services, clean REST, validation, and auth.",
       "items": [
-        { "label": "Node.js", "hint": "Working" },
-        { "label": "Express / Fastify", "hint": "Working" },
-        { "label": "REST API design", "hint": "Working" },
-        { "label": "Auth & sessions", "hint": "Working" },
-        { "label": "Type-safe validation (Zod)", "hint": "Working" },
-        { "label": "Docker (dev containers)", "hint": "Working" },
+        { "label": "Node.js", "hint": "Skilled" },
+        { "label": "Express", "hint": "Skilled" },
+        { "label": "REST API design", "hint": "Skilled" },
+        { "label": "Auth & sessions", "hint": "Skilled" },
+        { "label": "Type-safe validation (Zod)", "hint": "Familiar" },
+        { "label": "Docker (dev containers)", "hint": "Skilled" },
         { "label": "Deploy (Vercel/containers)", "hint": "Familiar" }
       ]
     },
@@ -58,8 +61,8 @@
       "items": [
         { "label": "Git, GitHub flow", "hint": "Proficient" },
         { "label": "PR reviews & code style", "hint": "Proficient" },
-        { "label": "GitHub Actions", "hint": "Working" },
-        { "label": "Semantic commits", "hint": "Working" },
+        { "label": "GitHub Actions", "hint": "Skilled" },
+        { "label": "Semantic commits", "hint": "Skilled" },
         { "label": "Lint/format (ESLint/Prettier)", "hint": "Proficient" }
       ]
     },
@@ -69,11 +72,11 @@
       "iconKey": "database",
       "description": "Pragmatic modeling, indexing basics, and efficient queries.",
       "items": [
-        { "label": "PostgreSQL", "hint": "Working" },
-        { "label": "SQLite", "hint": "Working" },
-        { "label": "Schema design & relations", "hint": "Working" },
-        { "label": "Indexing basics", "hint": "Working" },
-        { "label": "ORM familiarity (Prisma/Sequelize)", "hint": "Familiar" }
+        { "label": "PostgreSQL", "hint": "Skilled" },
+        { "label": "SQLite", "hint": "Skilled" },
+        { "label": "MongoDB", "hint": "Familiar" },
+        { "label": "Schema design & relations", "hint": "Familiar" },
+        { "label": "Indexing basics", "hint": "Familiar" }
       ]
     },
     {
@@ -82,10 +85,11 @@
       "iconKey": "flask",
       "description": "Confident changes with focused tests and static analysis.",
       "items": [
-        { "label": "Jest / Vitest", "hint": "Working" },
-        { "label": "React Testing Library", "hint": "Working" },
+        { "label": "Jest / Vitest", "hint": "Familiar" },
+        { "label": "React Testing Library", "hint": "Familiar" },
         { "label": "Type-safety mindset", "hint": "Proficient" },
-        { "label": "Static analysis", "hint": "Working" }
+        { "label": "Static analysis", "hint": "Skilled" },
+        { "label": "Code coverage", "hint": "Skilled" }
       ]
     }
   ],
@@ -98,7 +102,7 @@
       "items": [
         { "label": "Clarity & brevity", "hint": "Proficient" },
         { "label": "Docs & PR descriptions", "hint": "Proficient" },
-        { "label": "Stakeholder updates", "hint": "Working" }
+        { "label": "Stakeholder updates", "hint": "Skilled" }
       ]
     },
     {
@@ -109,7 +113,7 @@
       "items": [
         { "label": "Pair programming", "hint": "Proficient" },
         { "label": "Feedback culture", "hint": "Proficient" },
-        { "label": "Agile teamwork", "hint": "Working" }
+        { "label": "Agile teamwork", "hint": "Skilled" }
       ]
     },
     {
@@ -120,7 +124,7 @@
       "items": [
         { "label": "Debugging & profiling", "hint": "Proficient" },
         { "label": "Algorithmic thinking", "hint": "Proficient" },
-        { "label": "Benchmark & iterate", "hint": "Working" }
+        { "label": "Benchmark & iterate", "hint": "Skilled" }
       ]
     },
     {
@@ -131,7 +135,7 @@
       "items": [
         { "label": "Context switching", "hint": "Proficient" },
         { "label": "Learning velocity", "hint": "Proficient" },
-        { "label": "Tooling adoption", "hint": "Working" }
+        { "label": "Tooling adoption", "hint": "Skilled" }
       ]
     },
     {

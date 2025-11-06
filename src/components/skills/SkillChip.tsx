@@ -11,7 +11,7 @@ type Props = {
 const hintClass = (hint?: ProficiencyHint) =>
   hint === "Proficient"
     ? "text-[var(--primary)] font-semibold"
-    : hint === "Working"
+    : hint === "Skilled"
     ? "text-[var(--primary)]/80 font-medium"
     : "text-[var(--primary)]/60";
 
@@ -22,7 +22,7 @@ const SkillChip: React.FC<Props> = ({ label, icon, hint }) => (
       rounded-full border border-[var(--border)]/70 
       bg-[var(--surface)]/70 px-3 py-1.5
       text-sm text-[var(--muted)] backdrop-blur-sm
-      hover:border-[var(--text)]/50 hover:bg-[var(--surface)]/90
+      hover:border-[var(--primary)]/50 hover:bg-[var(--surface)]/90
       transition-colors duration-200
     "
   >

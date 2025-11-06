@@ -3,10 +3,7 @@ import Menu from "../components/Menu";
 
 // content
 import hero from "../content/hero.json";
-import site from "../content/site.json";
-
-// types
-import type { HeroContent, SiteInfo } from "../types/content";
+import type { HeroContent } from "../types/content";
 
 // pieces
 import HeroBackground from "../components/hero/HeroBackground";

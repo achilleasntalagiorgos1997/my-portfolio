@@ -96,7 +96,7 @@ export interface RailItem {
   label?: string;
 }
 
-export type ProficiencyHint = "Proficient" | "Working" | "Familiar";
+export type ProficiencyHint = "Proficient" | "Skilled" | "Familiar";
 
 /** Icon keys are strings in JSON; mapped to real components at runtime */
 export type IconKey =
