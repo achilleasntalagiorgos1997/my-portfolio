@@ -25,7 +25,7 @@ const SideRailBrand: React.FC<Props> = ({ setActiveId }) => (
       AN
     </span>
     <div
-      className="pointer-events-none absolute inset-0 rounded-2xl blur-xl bg-amber-400/10"
+      className="pointer-events-none absolute inset-0 rounded-2xl blur-xl bg-[var(--primary)]/10"
       aria-hidden
     />
   </a>

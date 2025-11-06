@@ -112,8 +112,8 @@ const Menu: React.FC = () => {
 
   return (
     <nav aria-label="Section navigation" className="md:w-1/3 md:pl-12 w-full">
-      <div className="relative rounded-2xl border border-gray-800/80 bg-gray-900/40 p-4 backdrop-blur-sm">
-        <h2 className="text-sm uppercase tracking-wider text-gray-400 mb-3">
+      <div className="relative rounded-2xl border border-[var(--border)]/80 bg-[var(--bg)]/40 p-4 backdrop-blur-sm">
+        <h2 className="text-sm uppercase tracking-wider text-[var(--muted)] mb-3">
           Menu
         </h2>
 
@@ -150,7 +150,7 @@ const Menu: React.FC = () => {
                       : "text-gray-300 hover:text-amber-200"
                   }`}
                 >
-                  <span className="text-xs tabular-nums text-gray-500 group-hover:text-amber-200 w-8">
+                  <span className="text-xs tabular-nums text-[var(--muted)] group-hover:text-amber-200 w-8">
                     {displayNumber}
                   </span>
                   <span className="font-medium tracking-tight">
@@ -166,8 +166,8 @@ const Menu: React.FC = () => {
         </ul>
 
         {/* You are here caption */}
-        <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
-          <span className="h-px w-6 bg-gray-700" />
+        <div className="mt-4 flex items-center gap-2 text-xs text-[var(--muted)]">
+          <span className="h-px w-6 bg-[var(--surface)]" />
           <span>You are here:</span>
           <span className="text-amber-300">{items[activeIndex]?.label}</span>
         </div>

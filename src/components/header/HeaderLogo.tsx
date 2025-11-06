@@ -8,7 +8,7 @@ const HeaderLogo: React.FC = () => {
   return (
     <a
       href="#home"
-      className="font-extrabold tracking-tight text-gray-100 hover:text-amber-300 transition-colors"
+      className="font-extrabold tracking-tight text-[var(--text)] hover:text-amber-300 transition-colors"
       aria-label={`${name} — go to home`}
     >
       {name}

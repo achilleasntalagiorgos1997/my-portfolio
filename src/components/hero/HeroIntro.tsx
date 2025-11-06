@@ -5,8 +5,8 @@ type Props = { h: HeroContent };
 
 const HeroIntro: React.FC<Props> = ({ h }) => (
   <>
-    <p className="text-sm md:text-base text-gray-400 mb-4 tracking-wide uppercase">
-      {h.greeting} <span className="text-gray-200 font-medium">{h.name}</span>
+    <p className="text-sm md:text-base text-[var(--muted)] mb-4 tracking-wide uppercase">
+      {h.greeting} <span className="text-[var(--text)] font-medium">{h.name}</span>
     </p>
 
     <h1 className="text-4xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6">

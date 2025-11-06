@@ -15,8 +15,8 @@ const CarouselPagination: React.FC<Props> = ({ count, index, onGoTo }) => (
         onClick={() => onGoTo(i)}
         className={`h-2.5 w-2.5 rounded-full transition-all ${
           i === index
-            ? "bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)]"
-            : "bg-gray-700 hover:bg-gray-600"
+            ? "bg-[var(--primary)] shadow-[0_0_10px_rgba(251,191,36,0.6)]"
+            : "bg-[var(--surface)] hover:bg-gray-600"
         }`}
       />
     ))}

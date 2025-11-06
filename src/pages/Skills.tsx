@@ -91,14 +91,14 @@ const hintClass = (hint?: ProficiencyHint) =>
     ? "text-emerald-400"
     : hint === "Working"
     ? "text-sky-400"
-    : "text-gray-400";
+    : "text-[var(--muted)]";
 
 const SegmentedToggle: React.FC<{
   active: SkillsView;
   onChange: (v: SkillsView) => void;
 }> = ({ active, onChange }) => {
   return (
-    <div className="relative inline-flex rounded-xl bg-gray-800 p-1 shadow-inner">
+    <div className="relative inline-flex rounded-xl bg-[var(--surface)] p-1 shadow-inner">
       {(["hard", "soft"] as SkillsView[]).map((v) => {
         const isActive = active === v;
         return (
@@ -106,7 +106,7 @@ const SegmentedToggle: React.FC<{
             key={v}
             type="button"
             className={`relative z-10 px-4 py-2 text-sm md:text-base rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70 ${
-              isActive ? "text-gray-900" : "text-gray-300 hover:text-gray-100"
+              isActive ? "text-gray-900" : "text-gray-300 hover:text-[var(--text)]"
             }`}
             aria-pressed={isActive}
             onClick={() => onChange(v)}
@@ -137,18 +137,18 @@ const AccordionItem: React.FC<{
   const catIcon = IconMap[category.iconKey] ?? null;
 
   return (
-    <div className="rounded-2xl bg-gray-800/60 border border-gray-700/60 overflow-hidden">
+    <div className="rounded-2xl bg-[var(--surface)]/60 border border-[var(--border)]/60 overflow-hidden">
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-3 px-5 py-4 md:px-6 md:py-5 text-left hover:bg-gray-800/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70"
+        className="w-full flex items-center justify-between gap-3 px-5 py-4 md:px-6 md:py-5 text-left hover:bg-[var(--surface)]/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70"
         aria-expanded={open}
         aria-controls={`accordion-panel-${category.id}`}
         id={`accordion-header-${category.id}`}
       >
         <div className="flex items-center gap-3">
           <span className="text-yellow-400">{catIcon}</span>
-          <span className="text-base md:text-lg font-semibold text-gray-100">
+          <span className="text-base md:text-lg font-semibold text-[var(--text)]">
             {index + 1}. {category.title}
           </span>
         </div>
@@ -156,7 +156,7 @@ const AccordionItem: React.FC<{
           initial={false}
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: reduce ? 0 : 0.2 }}
-          className="text-gray-400"
+          className="text-[var(--muted)]"
         >
           <ChevronDown className="h-5 w-5" />
         </motion.span>
@@ -190,9 +190,9 @@ const AccordionItem: React.FC<{
                       : null;
                   return (
                     <li key={it.label}>
-                      <div className="group inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-900/60 px-3 py-1.5 text-sm text-gray-200 hover:border-gray-600 hover:bg-gray-900">
+                      <div className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg)]/60 px-3 py-1.5 text-sm text-[var(--text)] hover:border-[var(--border)] hover:bg-[var(--bg)]">
                         {chipIcon && (
-                          <span className="text-gray-400 group-hover:text-gray-300">
+                          <span className="text-[var(--muted)] group-hover:text-gray-300">
                             {chipIcon}
                           </span>
                         )}
@@ -242,7 +242,7 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center bg-gray-900 text-gray-200 px-6 py-16 md:px-8"
+      className="min-h-screen flex flex-col justify-center bg-[var(--bg)] text-[var(--text)] px-6 py-16 md:px-8"
     >
       <div className="max-w-5xl mx-auto w-full">
         <div className="flex flex-col items-center gap-6 mb-10 md:mb-12">
@@ -251,8 +251,8 @@ const Skills: React.FC = () => {
           </h2>
           <p className="text-center text-gray-300/90 max-w-2xl">
             Toggle between{" "}
-            <span className="text-gray-100 font-medium">Hard</span> and{" "}
-            <span className="text-gray-100 font-medium">Soft</span> skills.
+            <span className="text-[var(--text)] font-medium">Hard</span> and{" "}
+            <span className="text-[var(--text)] font-medium">Soft</span> skills.
             Click a category to expand—only one stays open at a time.
           </p>
 

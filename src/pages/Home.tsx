@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden bg-gray-950 text-gray-100"
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden bg-[var(--bg)] text-[var(--text)]"
       aria-label="Hero section"
     >
       <HeroBackground />

@@ -4,7 +4,7 @@ const Studies: React.FC = () => {
   return (
     <section
       id="studies"
-      className="min-h-screen flex flex-col justify-center bg-gray-900 text-gray-200 px-8 py-16"
+      className="min-h-screen flex flex-col justify-center bg-[var(--bg)] text-[var(--text)] px-8 py-16"
     >
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-yellow-400">Education</h2>
@@ -21,10 +21,10 @@ const Studies: React.FC = () => {
 
         {/* --- University of Ioannina --- */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-gray-100">
+          <h3 className="text-2xl font-semibold text-[var(--text)]">
             BSc in Computer Science & Engineering
           </h3>
-          <p className="text-sm text-gray-400 mb-2">
+          <p className="text-sm text-[var(--muted)] mb-2">
             University of Ioannina | October 2015 – September 2021
           </p>
 
@@ -51,7 +51,7 @@ const Studies: React.FC = () => {
 
         {/* --- Certifications --- */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-100 mb-4">
+          <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">
             Certifications & Additional Learning
           </h3>
           <ul className="list-disc list-inside space-y-2 text-gray-300">

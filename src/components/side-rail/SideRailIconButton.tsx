@@ -22,7 +22,7 @@ const SideRailIconButton: React.FC<Props> = ({
     aria-label={ariaLabel ?? title}
     aria-current={active ? "true" : undefined}
     onClick={onClick}
-    className={`group relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-800/70 bg-gray-900/40 backdrop-blur-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 focus-visible:ring-offset-gray-950 hover:border-amber-400/50 hover:bg-gray-900/70 ${
+    className={`group relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)]/70 bg-[var(--bg)]/40 backdrop-blur-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 focus-visible:ring-offset-gray-950 hover:border-amber-400/50 hover:bg-[var(--bg)]/70 ${
       active ? "ring-1 ring-amber-400/40" : ""
     }`}
   >
