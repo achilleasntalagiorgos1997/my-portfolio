@@ -3,24 +3,24 @@
 /* ---- Design Tokens (theme variables) ---- */
 :root {
   /* Base theme - Dark */
-  --bg-dark: oklch(8% 0 0);
-  --surface-dark: oklch(15% 0 0);
-  --border-dark: oklch(35% 0 0);
-  --text-dark: oklch(95% 0 0);
-  --muted-dark: oklch(70% 0 0);
+  --bg-dark: oklch(8% 0.02 240); /* Deep blue-black */
+  --surface-dark: oklch(12% 0.03 240); /* Slightly lighter blue-black */
+  --border-dark: oklch(25% 0.05 240); /* Deep blue-gray */
+  --text-dark: oklch(95% 0.02 240); /* Cool white with slight blue tint */
+  --muted-dark: oklch(65% 0.04 240); /* Muted blue-gray */
 
-  --primary-dark: oklch(98% 0 0);
-  --on-primary-dark: oklch(10% 0 0);
-
-  /* Light theme */
+  --primary-dark: oklch(85% 0.15 240); /* Vibrant cool blue */
+  --on-primary-dark: oklch(
+    10% 0.02 240
+  ); /* Deep blue-black for contrast */ /* Light theme */
   --bg-light: oklch(98% 0 0);
-  --surface-light: oklch(95% 0 0);
-  --border-light: oklch(75% 0 0);
+  --surface-light: oklch(100% 0 0);
+  --border-light: oklch(85% 0.05 240);
   --text-light: oklch(15% 0 0);
   --muted-light: oklch(45% 0 0);
 
-  --primary-light: oklch(15% 0 0);
-  --on-primary-light: oklch(98% 0 0);
+  --primary-light: oklch(65% 0.15 240);
+  --on-primary-light: oklch(100% 0 0);
 
   /* Theme-aware variables */
   --bg: var(--bg-dark);
@@ -60,18 +60,34 @@
 /* Dark theme - inherits root variables */
 [data-theme="dark"] {
   /* hero highlight colors (brand accent) - dark theme */
-  --hero-from: oklch(85% 0.02 240); /* light cool gray */
-  --hero-via: oklch(92% 0.01 260); /* soft near-white gray */
-  --hero-to: oklch(98% 0 0); /* pure white end */
+  --hero-from: oklch(75% 0.15 240); /* vibrant cool blue */
+  --hero-via: oklch(82% 0.12 250); /* lighter blue with purple hint */
+  --hero-to: oklch(90% 0.08 260); /* soft blue-white */
 
   /* menu / UI accents - dark theme */
-  --focus-ring: oklch(92% 0 0);
-  --menu-indicator-from: oklch(78% 0 0);
-  --menu-indicator-to: oklch(96% 0 0);
+  --focus-ring: oklch(85% 0.15 240); /* bright cool blue */
+  --menu-indicator-from: oklch(75% 0.12 240); /* medium cool blue */
+  --menu-indicator-to: oklch(85% 0.15 240); /* bright cool blue */
 
-  --hint-strong: oklch(95% 0 0);
-  --hint-medium: oklch(82% 0 0);
-  --hint-weak: oklch(70% 0 0);
+  --hint-strong: oklch(85% 0.15 240); /* bright cool blue */
+  --hint-medium: oklch(75% 0.1 240); /* medium cool blue */
+  --hint-weak: oklch(65% 0.08 240); /* muted cool blue */
+
+  /* Common variables that stay consistent across themes */
+  --radius-round: 9999px;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  --ring-width: 2px;
+  --ring-offset: 2px;
+
+  /* Button styles */
+  --btn-radius: var(--radius-lg);
+  --btn-focus-ring-color: var(--primary);
+  --btn-focus-ring-offset: var(--bg);
 
   /* Typography */
   --font-sans: "InterVariable", system-ui, -apple-system, Segoe UI, Roboto,
@@ -103,12 +119,6 @@
   --space-4: 1rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
-
-  /* Radii */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.25rem;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.08);

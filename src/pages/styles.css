@@ -1,0 +1,24 @@
+/* Page section styles */
+#home {
+  min-height: 100vh;
+  padding-bottom: 2rem; /* Reduced from default */
+}
+
+#experience,
+#studies,
+#skills {
+  min-height: 80vh; /* Reduced from 100vh */
+  padding-top: 2rem; /* Reduced spacing between sections */
+  padding-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #experience,
+  #studies,
+  #skills {
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

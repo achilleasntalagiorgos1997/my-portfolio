@@ -8,7 +8,7 @@ type Props = {
 const HomeLink: React.FC<Props> = ({ setActiveId }) => (
   <a
     href="#home"
-    className="relative flex h-8 w-8 items-center justify-center rounded-2xl bg-gradient-to-tr from-amber-400/25 via-amber-300/20 to-cyan-300/25 ring-1 ring-inset ring-amber-400/30 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 focus-visible:ring-offset-gray-950"
+    className="relative flex h-8 w-8 items-center justify-center rounded-[var(--radius-2xl)] bg-gradient-to-tr from-[var(--primary)]/25 via-[var(--primary)]/20 to-[var(--primary)]/25 ring-1 ring-inset ring-[var(--primary)]/30 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-[var(--bg)] focus-visible:ring-offset-2 transition-colors"
     title="Home"
     aria-label="Go to Home"
     onClick={(e) => {
@@ -21,7 +21,7 @@ const HomeLink: React.FC<Props> = ({ setActiveId }) => (
       }
     }}
   >
-    <span className="font-bold text-amber-200 tracking-wide select-none">
+    <span className="font-bold text-[var(--text)] tracking-wide select-none">
       AN
     </span>
     <div

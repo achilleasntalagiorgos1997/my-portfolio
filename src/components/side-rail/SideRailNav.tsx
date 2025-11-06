@@ -54,16 +54,16 @@ const SideRailNav: React.FC<Props> = ({ items, activeId, setActiveId }) => (
           }}
         >
           <Icon
-            className={`h-5 w-5 ${
+            className={`h-5 w-5 transition-colors ${
               isActive
-                ? "text-amber-300"
-                : "text-gray-300 group-hover:text-amber-200"
+                ? "text-[var(--text)]"
+                : "text-[var(--muted)] group-hover:text-[var(--text)]"
             }`}
             aria-hidden
           />
           <span
             aria-hidden
-            className={`absolute -left-3 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shadow-[0_0_8px_rgba(251,191,36,0.6)] transition-opacity ${
+            className={`absolute -left-3 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shadow-[0_0_8px_var(--primary)] transition-all ${
               isActive ? "opacity-100" : "opacity-0 group-hover:opacity-60"
             }`}
           />

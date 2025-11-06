@@ -13,7 +13,7 @@ const Studies: React.FC = () => {
       id="studies"
       className="relative min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 md:px-8 py-20 overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto w-full">
         <SectionHeader
           title="Studies"
           subtitle="A solid academic foundation in computer science and engineering."

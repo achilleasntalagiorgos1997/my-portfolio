@@ -19,10 +19,10 @@ const SegmentedToggle: React.FC<{
           <button
             key={v}
             type="button"
-            className={`relative z-10 px-4 py-2 text-sm md:text-base rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
+            className={`relative z-10 px-4 py-2 text-sm md:text-base rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
               isActive
-                ? "text-[var(--toggle-active-fg)]"
-                : "text-[var(--toggle-inactive-fg)] hover:text-[var(--text)]"
+                ? "text-[var(--primary-fg)]"
+                : "text-[var(--text)]/60 hover:text-[var(--text)]"
             }`}
             aria-pressed={isActive}
             onClick={() => onChange(v)}

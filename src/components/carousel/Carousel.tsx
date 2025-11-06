@@ -21,7 +21,7 @@ function Carousel<T>({ title, subtitle, slides, renderSlide }: Props<T>) {
 
   return (
     <section className="relative min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 md:px-8 py-20 overflow-hidden">
-      <div className="mx-auto max-w-5xl">
+      <div className="max-w-5xl mx-auto w-full">
         <SectionHeader title={title} subtitle={subtitle} />
 
         <div className="relative">

@@ -6,6 +6,7 @@ import Skills from "./pages/Skills";
 import SideRail from "./components/side-rail/SideRail";
 
 import { ThemeProvider } from "./contexts/ThemeContext";
+import "./pages/styles.css";
 
 function App() {
   return (
