@@ -13,10 +13,10 @@ const CardHighlights: React.FC<Props> = ({ highlights }) => {
           key={i}
           className="rounded-lg border border-[var(--border)]/70 bg-[var(--bg)]/40 px-3 py-2 text-center"
         >
-          <div className="text-[10px] uppercase tracking-wide text-[var(--muted)]">
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
             {h.label}
           </div>
-          <div className="text-sm font-semibold text-[var(--accent)]">
+          <div className="text-sm font-semibold text-[var(--primary)]">
             {h.value}
           </div>
         </li>

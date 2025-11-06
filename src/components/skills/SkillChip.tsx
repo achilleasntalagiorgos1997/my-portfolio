@@ -7,22 +7,33 @@ type Props = {
   hint?: ProficiencyHint;
 };
 
+// Hint color → always blue but with varied opacity for nuance
 const hintClass = (hint?: ProficiencyHint) =>
   hint === "Proficient"
-    ? "text-[var(--hint-strong)]"
+    ? "text-[var(--primary)] font-semibold"
     : hint === "Working"
-    ? "text-[var(--hint-medium)]"
-    : "text-[var(--hint-weak)]";
+    ? "text-[var(--primary)]/80 font-medium"
+    : "text-[var(--primary)]/60";
 
 const SkillChip: React.FC<Props> = ({ label, icon, hint }) => (
-  <div className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg)]/60 px-3 py-1.5 text-sm text-[var(--text)] hover:border-[var(--border)] hover:bg-[var(--bg)]">
+  <div
+    className="
+      group inline-flex items-center gap-2
+      rounded-full border border-[var(--border)]/70 
+      bg-[var(--surface)]/70 px-3 py-1.5
+      text-sm text-[var(--muted)] backdrop-blur-sm
+      hover:border-[var(--text)]/50 hover:bg-[var(--surface)]/90
+      transition-colors duration-200
+    "
+  >
     {icon && (
-      <span className="text-[var(--muted)] group-hover:text-[var(--text)]">
+      <span className="text-[var(--primary)]/70 group-hover:text-[var(--primary)]">
         {icon}
       </span>
     )}
-    <span className="font-medium">{label}</span>
+    <span className="font-medium text-[var(--text)]">{label}</span>
     {hint && <span className={`text-xs ${hintClass(hint)}`}>{hint}</span>}
   </div>
 );
+
 export default SkillChip;

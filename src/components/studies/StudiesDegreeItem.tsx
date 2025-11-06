@@ -7,7 +7,7 @@ type Props = {
   bullets: React.ReactNode[];
 };
 
-const StudiesDegreeItem: React.FC<Props> = ({
+const DegreeItem: React.FC<Props> = ({
   title,
   institution,
   period,
@@ -19,7 +19,7 @@ const StudiesDegreeItem: React.FC<Props> = ({
       {institution} | {period}
     </p>
 
-    <ul className="list-disc list-inside space-y-2 text-[var(--muted)] mt-4">
+    <ul className="list-disc list-inside space-y-2 text-[var(--text-muted)] mt-4">
       {bullets.map((b, i) => (
         <li key={i}>{b}</li>
       ))}
@@ -27,4 +27,4 @@ const StudiesDegreeItem: React.FC<Props> = ({
   </div>
 );
 
-export default StudiesDegreeItem;
+export default DegreeItem;

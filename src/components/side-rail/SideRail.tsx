@@ -75,7 +75,7 @@ const SideRail: React.FC = () => {
       {/* Vertical gradient spine */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-amber-400/40 to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-[var(--primary)]/40 to-transparent"
       />
 
       {/* Spacer (header now owns Home + theme) */}

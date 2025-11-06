@@ -30,7 +30,7 @@ const SectionHeader: React.FC<Props> = ({
       </h2>
 
       {subtitle && (
-        <p className="mt-3 text-[var(--muted)] max-w-2xl leading-relaxed">
+        <p className="mt-3 text-[var(--text-muted)] max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}

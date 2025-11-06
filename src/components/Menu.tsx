@@ -107,7 +107,7 @@ const Menu: React.FC = () => {
           Menu
         </h2>
 
-        {/* Sliding neutral indicator */}
+        {/* Sliding indicator */}
         <div
           aria-hidden
           className="absolute left-0 top-[4.25rem] h-10 w-[3px] rounded-full bg-gradient-to-b from-[var(--menu-indicator-from)] to-[var(--menu-indicator-to)] shadow-[0_0_12px_rgba(255,255,255,0.18)] transition-transform duration-300"
@@ -136,11 +136,17 @@ const Menu: React.FC = () => {
                   }}
                   className={`group flex h-10 items-center gap-3 rounded-lg px-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
                     isActive
-                      ? "text-[var(--text)]"
-                      : "text-[var(--muted)] hover:text-[var(--text)]"
+                      ? "text-[var(--primary)] font-semibold"
+                      : "text-[var(--muted)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  <span className="text-xs tabular-nums text-[var(--muted)] group-hover:text-[var(--text)] w-8">
+                  <span
+                    className={`text-xs tabular-nums w-8 transition-colors ${
+                      isActive
+                        ? "text-[var(--primary)]"
+                        : "text-[var(--muted)] group-hover:text-[var(--primary)]"
+                    }`}
+                  >
                     {displayNumber}
                   </span>
                   <span className="font-medium tracking-tight">
@@ -159,7 +165,7 @@ const Menu: React.FC = () => {
         <div className="mt-4 flex items-center gap-2 text-xs text-[var(--muted)]">
           <span className="h-px w-6 bg-[var(--surface)]" />
           <span>You are here:</span>
-          <span className="text-[var(--text)] font-medium">
+          <span className="text-[var(--primary)] font-medium">
             {items[activeIndex]?.label}
           </span>
         </div>

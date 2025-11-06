@@ -63,8 +63,10 @@ const SideRailNav: React.FC<Props> = ({ items, activeId, setActiveId }) => (
           />
           <span
             aria-hidden
-            className={`absolute -left-3 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shadow-[0_0_8px_var(--primary)] transition-all ${
-              isActive ? "opacity-100" : "opacity-0 group-hover:opacity-60"
+            className={`absolute left-[-10px] top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shadow-[0_0_8px_var(--primary)] transition-all duration-300 ${
+              isActive
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-75 group-hover:opacity-70 group-hover:scale-100"
             }`}
           />
         </SideRailIconButton>

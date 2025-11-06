@@ -13,10 +13,10 @@ const CarouselPagination: React.FC<Props> = ({ count, index, onGoTo }) => (
         key={i}
         aria-label={`Go to slide ${i + 1}`}
         onClick={() => onGoTo(i)}
-        className={`h-2.5 w-2.5 rounded-full transition-all ${
+        className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
           i === index
-            ? "bg-[var(--primary)] shadow-[0_0_10px_rgba(251,191,36,0.6)]"
-            : "bg-[var(--surface)] hover:bg-gray-600"
+            ? "bg-[var(--primary)] shadow-[0_0_10px_var(--primary)/60] scale-110"
+            : "bg-[var(--border)]/60 hover:bg-[var(--primary)]/60"
         }`}
       />
     ))}

@@ -16,8 +16,9 @@ const CarouselViewport: React.FC<Props> = ({
     {/* Horizontal spine under the card */}
     <div
       aria-hidden
-      className="absolute left-0 right-0 -bottom-6 h-[2px] bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"
+      className="absolute left-0 right-0 -bottom-6 h-[2px] bg-gradient-to-r from-transparent via-[var(--primary)]/40 to-transparent"
     />
+
     <div className="overflow-hidden">
       <div
         ref={trackRef}
