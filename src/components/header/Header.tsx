@@ -5,7 +5,7 @@ import HeaderLogo from "./HeaderLogo";
 import HeaderNav from "./HeaderNav";
 import HeaderButton from "./HeaderButton";
 import HomeLink from "./HomeLink";
-import SideRailBrand from "./Brand";
+import Theme from "./Theme";
 
 const Header: React.FC = () => {
   const resumeUrl = resumePdf;
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           <HeaderButton href={resumeUrl} external variant="primary" download>
             Download Resume
           </HeaderButton>
-          <SideRailBrand />
+          <Theme />
         </div>
       </div>
     </header>
