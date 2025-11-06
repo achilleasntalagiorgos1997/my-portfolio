@@ -21,7 +21,7 @@ const HeroIntro: React.FC<Props> = ({ h }) => (
         {h.headline.highlight}
       </span>
     </h1>
-    <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed mb-8 max-w-2xl">
+    <p className="text-base md:text-lg text-[var(--text-muted)] leading-relaxed mb-8 max-w-2xl">
       {h.subheadline}
     </p>
   </>
