@@ -1,6 +1,7 @@
 import React from "react";
 import type { CtaVariant, HeroContent } from "../../types/content";
 import resumePdf from "../../assets/AchilleasNtalagiorgosCV.pdf";
+
 type Props = {
   ctas: HeroContent["ctas"];
 };
@@ -16,11 +17,21 @@ const variantClasses: Record<CtaVariant, string> = {
 const CtaButtons: React.FC<Props> = ({ ctas }) => (
   <div className="flex flex-wrap items-center gap-3 mb-10">
     {ctas.map(({ label, href, external, variant }) => {
-      const isDownload = label.toLowerCase().includes("open");
-      const finalHref = isDownload ? resumePdf : href;
+      const lowerLabel = label.toLowerCase();
 
-      // Always open resume in a new tab
-      const isExternal = external || isDownload;
+      // ✅ Custom behaviors
+      const isResume =
+        lowerLabel.includes("open") || lowerLabel.includes("resume");
+      const isTalk =
+        lowerLabel.includes("let's talk") || lowerLabel.includes("lets talk");
+
+      // ✅ Link routing logic
+      let finalHref = href;
+      if (isResume) finalHref = resumePdf;
+      if (isTalk) finalHref = "https://github.com/AchilleasNtalagiorgos"; // <-- your GitHub profile
+
+      // ✅ Always open resume or GitHub in new tab
+      const isExternal = external || isResume || isTalk;
       const rel = isExternal ? "noreferrer noopener" : undefined;
       const target = isExternal ? "_blank" : undefined;
 

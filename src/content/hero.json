@@ -17,8 +17,17 @@
     "Testing"
   ],
   "ctas": [
-    { "label": "View Projects", "href": "#projects", "variant": "primary" },
-    { "label": "Let’s Talk", "href": "#contact", "variant": "secondary" },
+    {
+      "label": "View Projects",
+      "href": "https://github.com/achilleasntalagiorgos1997",
+      "variant": "primary",
+      "external": true
+    },
+    {
+      "label": "Let’s Talk",
+      "href": "#home",
+      "variant": "secondary"
+    },
     {
       "label": "Open CV",
       "href": "/resume.pdf",
@@ -26,8 +35,5 @@
       "external": true
     }
   ],
-  "microcopy": {
-    "scrollHint": "Scroll",
-    "scrollSymbol": "↓"
-  }
+  "microcopy": { "scrollHint": "Scroll", "scrollSymbol": "↓" }
 }
