@@ -36,7 +36,7 @@ type Props = {
 
 const SideRailNav: React.FC<Props> = ({ items, activeId, setActiveId }) => (
   <nav className="flex flex-col items-center gap-3" aria-label="Sections">
-    {items.map((item) => {
+    {items.slice(0, 4).map((item) => {
       const Icon = iconForId(item.id);
       const isActive = activeId === item.id;
       return (
