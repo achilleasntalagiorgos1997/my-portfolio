@@ -1,0 +1,25 @@
+{
+  "intro": "My academic journey provided the technical depth and analytical mindset that shaped my approach to problem-solving and software design. Through a mix of theoretical study and hands-on projects, I developed strong foundations in algorithms, programming, and systems engineering — skills that continue to guide my professional work today.",
+
+  "degrees": [
+    {
+      "title": "BSc in Computer Science & Engineering",
+      "institution": "University of Ioannina",
+      "period": "October 2015 – September 2021",
+      "bullets": [
+        "5-year integrated master’s program focused on algorithms, data structures, and system design.",
+        "Thesis: Multi-criteria shortest path algorithms — researched and implemented two algorithmic approaches in C, evaluating performance across diverse datasets.",
+        "Collaborated on multiple Java, Python, and C projects, gaining experience in teamwork and agile development.",
+        "Studied topics including database systems, operating systems, computer networks, and artificial intelligence."
+      ]
+    }
+  ],
+
+  "certifications": [
+    "Computer Science teacher certification (Greek Ministry of Education)",
+    "Software Engineering Virtual Experience – JPMorgan Chase & Co. (Forage)",
+    "Introduction to Machine Learning – Coursera (Andrew Ng, Stanford University)",
+    "Version Control with Git – Udacity",
+    "Responsive Web Design – freeCodeCamp"
+  ]
+}
