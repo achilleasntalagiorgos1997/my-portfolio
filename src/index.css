@@ -22,6 +22,14 @@
   --menu-indicator-from: oklch(78% 0 0); /* light gray start */
   --menu-indicator-to: oklch(96% 0 0); /* near-white end */
 
+  --toggle-active-bg: oklch(98% 0 0);
+  --toggle-active-fg: oklch(8% 0 0);
+  --toggle-inactive-fg: oklch(70% 0 0);
+
+  --hint-strong: oklch(95% 0 0); /* Proficient */
+  --hint-medium: oklch(82% 0 0); /* Working */
+  --hint-weak: oklch(70% 0 0); /* default/other */
+
   /* Typography */
   --font-sans: "InterVariable", system-ui, -apple-system, Segoe UI, Roboto,
     "Helvetica Neue", Arial, sans-serif;

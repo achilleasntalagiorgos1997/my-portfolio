@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
-  ChevronDown,
   Cpu,
   Layout,
   Server,
@@ -21,17 +20,12 @@ import {
   TerminalSquare,
 } from "lucide-react";
 
-import skillsData from "../content/skills.json"; // path alias as in your project
-import type {
-  SkillsContent,
-  SkillCategory,
-  SkillItem,
-  IconKey,
-  ProficiencyHint,
-} from "../types/content";
-import SectionHeader from "../components/common/SectionHeader";
+import skillsData from "../content/skills.json";
+import type { SkillsContent, SkillCategory, IconKey } from "../types/content";
 
-// Map JSON iconKey -> actual icon component
+import SectionHeader from "../components/common/SectionHeader";
+import { SegmentedToggle, AccordionItem } from "../components/skills";
+
 const IconMap: Record<IconKey, React.ReactNode> = {
   layout: <Layout className="h-5 w-5" />,
   server: <Server className="h-5 w-5" />,
@@ -54,12 +48,6 @@ const IconMap: Record<IconKey, React.ReactNode> = {
 };
 
 type SkillsView = "hard" | "soft";
-const viewTitle: Record<SkillsView, string> = {
-  hard: "Hard Skills",
-  soft: "Soft Skills",
-};
-
-// Type-check JSON at import time
 const skills = skillsData as SkillsContent;
 
 const containerVariants = {
@@ -82,142 +70,6 @@ const containerVariants = {
   }),
 };
 
-const accordionVariants = {
-  collapsed: { height: 0, opacity: 0 },
-  expanded: { height: "auto", opacity: 1 },
-};
-
-const hintClass = (hint?: ProficiencyHint) =>
-  hint === "Proficient"
-    ? "text-emerald-400"
-    : hint === "Working"
-    ? "text-sky-400"
-    : "text-[var(--muted)]";
-
-const SegmentedToggle: React.FC<{
-  active: SkillsView;
-  onChange: (v: SkillsView) => void;
-}> = ({ active, onChange }) => {
-  return (
-    <div className="relative inline-flex rounded-xl bg-[var(--surface)] p-1 shadow-inner">
-      {(["hard", "soft"] as SkillsView[]).map((v) => {
-        const isActive = active === v;
-        return (
-          <button
-            key={v}
-            type="button"
-            className={`relative z-10 px-4 py-2 text-sm md:text-base rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70 ${
-              isActive
-                ? "text-gray-900"
-                : "text-gray-300 hover:text-[var(--text)]"
-            }`}
-            aria-pressed={isActive}
-            onClick={() => onChange(v)}
-          >
-            {viewTitle[v]}
-          </button>
-        );
-      })}
-      {/* Animated background pill */}
-      <span className="absolute inset-1 grid grid-cols-2" aria-hidden="true">
-        <motion.span
-          className="col-span-1 rounded-lg bg-yellow-400"
-          animate={{ x: active === "hard" ? "0%" : "100%" }}
-          transition={{ type: "spring", stiffness: 240, damping: 26 }}
-        />
-      </span>
-    </div>
-  );
-};
-
-const AccordionItem: React.FC<{
-  open: boolean;
-  onToggle: () => void;
-  category: SkillCategory;
-  index: number;
-}> = ({ open, onToggle, category, index }) => {
-  const reduce = useReducedMotion();
-  const catIcon = IconMap[category.iconKey] ?? null;
-
-  return (
-    <div className="rounded-2xl bg-[var(--surface)]/60 border border-[var(--border)]/60 overflow-hidden">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="w-full flex items-center justify-between gap-3 px-5 py-4 md:px-6 md:py-5 text-left hover:bg-[var(--surface)]/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70"
-        aria-expanded={open}
-        aria-controls={`accordion-panel-${category.id}`}
-        id={`accordion-header-${category.id}`}
-      >
-        <div className="flex items-center gap-3">
-          <span className="text-yellow-400">{catIcon}</span>
-          <span className="text-base md:text-lg font-semibold text-[var(--text)]">
-            {index + 1}. {category.title}
-          </span>
-        </div>
-        <motion.span
-          initial={false}
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: reduce ? 0 : 0.2 }}
-          className="text-[var(--muted)]"
-        >
-          <ChevronDown className="h-5 w-5" />
-        </motion.span>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="content"
-            id={`accordion-panel-${category.id}`}
-            role="region"
-            aria-labelledby={`accordion-header-${category.id}`}
-            initial="collapsed"
-            animate="expanded"
-            exit="collapsed"
-            variants={accordionVariants}
-            transition={{ duration: reduce ? 0 : 0.25, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            <div className="px-5 pb-5 md:px-6 md:pb-6">
-              {category.description && (
-                <p className="text-sm md:text-base text-gray-300/90 mb-4">
-                  {category.description}
-                </p>
-              )}
-              <ul className="flex flex-wrap gap-2.5">
-                {category.items.map((it: SkillItem) => {
-                  const chipIcon =
-                    it.iconKey && IconMap[it.iconKey]
-                      ? IconMap[it.iconKey]
-                      : null;
-                  return (
-                    <li key={it.label}>
-                      <div className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg)]/60 px-3 py-1.5 text-sm text-[var(--text)] hover:border-[var(--border)] hover:bg-[var(--bg)]">
-                        {chipIcon && (
-                          <span className="text-[var(--muted)] group-hover:text-gray-300">
-                            {chipIcon}
-                          </span>
-                        )}
-                        <span className="font-medium">{it.label}</span>
-                        {it.hint && (
-                          <span className={`text-xs ${hintClass(it.hint)}`}>
-                            {it.hint}
-                          </span>
-                        )}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
 const Skills: React.FC = () => {
   const [activeView, setActiveView] = React.useState<SkillsView>("hard");
   const [openCategory, setOpenCategory] = React.useState<string | null>(null);
@@ -227,7 +79,6 @@ const Skills: React.FC = () => {
   const categories: SkillCategory[] =
     activeView === "hard" ? skills.hard : skills.soft;
 
-  // Auto-open first category on mount and on view switch
   React.useEffect(() => {
     setOpenCategory(categories[0]?.id ?? null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -253,6 +104,7 @@ const Skills: React.FC = () => {
           subtitle="Toggle between Hard and Soft skills."
           align="left"
         />
+
         <div className="flex flex-col items-center gap-6 mb-10 md:mb-12">
           <SegmentedToggle active={activeView} onChange={handleViewChange} />
         </div>
@@ -276,6 +128,7 @@ const Skills: React.FC = () => {
                   index={idx}
                   open={openCategory === cat.id}
                   onToggle={() => toggleCategory(cat.id)}
+                  icon={IconMap[cat.iconKey] ?? null}
                 />
               ))}
             </motion.div>
