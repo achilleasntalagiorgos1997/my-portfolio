@@ -17,7 +17,6 @@ import ScrollHint from "../components/hero/ScrollHint";
 
 const Home: React.FC = () => {
   const h = hero as HeroContent;
-  const resumeUrl = (site as SiteInfo).assets?.resumeUrl ?? "/resume.pdf";
 
   return (
     <section
@@ -30,7 +29,7 @@ const Home: React.FC = () => {
       {/* Left: Intro */}
       <div className="w-full md:w-2/3 px-8 md:px-12 py-24 md:py-0 max-w-3xl">
         <HeroIntro h={h} />
-        <CtaButtons ctas={h.ctas} resumeUrl={resumeUrl} />
+        <CtaButtons ctas={h.ctas} />
         <TechBadges badges={h.badges} />
         <ScrollHint
           text={h.microcopy.scrollHint}

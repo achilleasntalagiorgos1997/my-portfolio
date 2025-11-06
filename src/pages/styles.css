@@ -1,11 +1,15 @@
 /* Page section styles */
 #home {
-  min-height: 100vh;
-  padding-bottom: 2rem; /* Reduced from default */
+  min-height: 80vh;
+  padding-bottom: 0rem; /* Reduced from default */
 }
 
 #experience,
-#studies,
+#studies {
+  min-height: 80vh; /* Reduced from 100vh */
+  padding-top: 0rem; /* Reduced spacing between sections */
+  padding-bottom: 2rem;
+}
 #skills {
   min-height: 80vh; /* Reduced from 100vh */
   padding-top: 2rem; /* Reduced spacing between sections */

@@ -30,6 +30,7 @@
   --muted: var(--muted-dark);
   --primary: var(--primary-dark);
   --on-primary: var(--on-primary-dark);
+  --primary-fg: var(--on-primary);
 }
 
 /* Light theme class */
@@ -39,8 +40,11 @@
   --border: var(--border-light);
   --text: var(--text-light);
   --muted: var(--muted-light);
+  --text: oklch(12% 0 0); /* was --text-light: 15% */
+  --muted: oklch(40% 0 0); /* was --muted-light: 45% */
   --primary: var(--primary-light);
   --on-primary: var(--on-primary-light);
+  --primary-fg: var(--on-primary);
 
   /* hero highlight colors (brand accent) - light theme */
   --hero-from: oklch(65% 0.2 240); /* darker cool blue */
