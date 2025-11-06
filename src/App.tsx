@@ -4,6 +4,7 @@ import Experience from "./pages/Experience";
 import Studies from "./pages/Studies";
 import Skills from "./pages/Skills";
 import SideRail from "./components/side-rail/SideRail";
+import Footer from "./components/Footer";
 
 import { ThemeProvider } from "./contexts/ThemeContext";
 import "./pages/styles.css";
@@ -19,6 +20,7 @@ function App() {
         <Studies />
         <Skills />
       </main>
+      <Footer />
     </ThemeProvider>
   );
 }

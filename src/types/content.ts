@@ -1,19 +1,26 @@
 // src/types/content.ts
 
-// --- CTA Variants ---
+// src/types/content.ts
+
 export type CtaVariant = "primary" | "secondary" | "link";
 
-// --- Site-wide info (from site.json) ---
 export interface SiteInfo {
   name: string;
   role?: string;
+  location?: string; // ⬅ added
   social?: {
     github?: string | null;
     linkedin?: string | null;
-    email?: string | null;
+    email?: string | null; // ⬅ moved email under social
+    facebook?: string | null; // ⬅ added
+    instagram?: string | null; // ⬅ added
+    x?: string | null;
+    website?: string | null;
   };
   assets?: {
     resumeUrl?: string;
+    ogImage?: string;
+    favicon?: string;
   };
 }
 
@@ -34,8 +41,9 @@ export interface HeroContent {
   ctas: {
     label: string;
     href: string;
-    external?: boolean;
     variant: CtaVariant;
+    external?: boolean;
+    scrollToId?: string;
   }[];
   microcopy: { scrollHint: string; scrollSymbol: string };
 }
@@ -98,37 +106,14 @@ export interface RailItem {
 
 export type ProficiencyHint = "Proficient" | "Skilled" | "Familiar";
 
-/** Icon keys are strings in JSON; mapped to real components at runtime */
-export type IconKey =
-  | "layout" // Frontend
-  | "server" // Backend
-  | "gitBranch" // Versioning
-  | "database" // Databases
-  | "flask" // Testing
-  | "messageSquare" // Communication
-  | "users" // Collaboration
-  | "puzzle" // Problem Solving
-  | "repeat" // Adaptability
-  | "shieldCheck" // Ownership
-  | "box"
-  | "type"
-  | "fileCode"
-  | "sparkles"
-  | "wrench"
-  | "terminal"
-  | "cpu"
-  | "none"; // fallback when you don't want an icon
-
 export interface SkillItem {
   label: string;
   hint?: ProficiencyHint;
-  iconKey?: IconKey; // optional small icon next to chip label
 }
 
 export interface SkillCategory {
   id: string; // unique key used for accordion state
   title: string;
-  iconKey: IconKey; // category icon (mapped in component)
   description?: string;
   items: SkillItem[];
 }

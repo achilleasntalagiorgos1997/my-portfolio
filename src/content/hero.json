@@ -25,9 +25,11 @@
     },
     {
       "label": "Let’s Talk",
-      "href": "#home",
-      "variant": "secondary"
+      "href": "#contact",
+      "variant": "secondary",
+      "scrollToId": "contact"
     },
+
     {
       "label": "Open CV",
       "href": "/resume.pdf",

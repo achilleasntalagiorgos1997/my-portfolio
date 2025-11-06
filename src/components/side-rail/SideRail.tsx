@@ -86,7 +86,7 @@ const SideRail: React.FC = () => {
         activeId={activeId}
         setActiveId={setActiveId}
       />
-      <SideRailFooter email={email} setActiveId={setActiveId} />
+      <SideRailFooter setActiveId={setActiveId} />
     </aside>
   );
 };

@@ -14,43 +14,55 @@ const variantClasses: Record<CtaVariant, string> = {
   link: "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-[var(--text)]/80 border border-transparent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-[var(--bg)]",
 };
 
-const CtaButtons: React.FC<Props> = ({ ctas }) => (
-  <div className="flex flex-wrap items-center gap-3 mb-10">
-    {ctas.map(({ label, href, external, variant }) => {
-      const lowerLabel = label.toLowerCase();
+const CtaButtons: React.FC<Props> = ({ ctas }) => {
+  const handleScroll = (targetId: string) => {
+    const el = document.getElementById(targetId);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
-      const isResume =
-        lowerLabel.includes("open") || lowerLabel.includes("resume");
-      const isTalk =
-        lowerLabel.includes("let's talk") || lowerLabel.includes("lets talk");
+  return (
+    <div className="flex flex-wrap items-center gap-3 mb-10">
+      {ctas.map(({ label, href, external, variant, scrollToId }) => {
+        const lowerLabel = label.toLowerCase();
+        const isResume =
+          lowerLabel.includes("open") || lowerLabel.includes("resume");
 
-      let finalHref = href;
-      if (isResume) finalHref = resumePdf;
-      if (isTalk) finalHref = "https://github.com/AchilleasNtalagiorgos"; // <-- your GitHub profile
+        let finalHref = href;
+        if (isResume) finalHref = resumePdf;
 
-      const isExternal = external || isResume || isTalk;
-      const rel = isExternal ? "noreferrer noopener" : undefined;
-      const target = isExternal ? "_blank" : undefined;
+        const isExternal = external || isResume;
+        const rel = isExternal ? "noreferrer noopener" : undefined;
+        const target = isExternal ? "_blank" : undefined;
 
-      // 🔹 If it's the "Open CV" link, give it a blue hover color
-      const extraHover =
-        isResume && variant === "link"
-          ? "hover:text-[var(--primary)] hover:no-underline"
-          : "";
+        const extraHover =
+          isResume && variant === "link"
+            ? "hover:text-[var(--primary)] hover:no-underline"
+            : "";
 
-      return (
-        <a
-          key={label}
-          href={finalHref}
-          target={target}
-          rel={rel}
-          className={`${variantClasses[variant]} ${extraHover}`}
-        >
-          {label}
-        </a>
-      );
-    })}
-  </div>
-);
+        const handleClick = (
+          e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+        ) => {
+          if (scrollToId) {
+            e.preventDefault();
+            handleScroll(scrollToId);
+          }
+        };
+
+        return (
+          <a
+            key={label}
+            href={scrollToId ? `#${scrollToId}` : finalHref}
+            target={scrollToId ? undefined : target}
+            rel={rel}
+            onClick={handleClick}
+            className={`${variantClasses[variant]} ${extraHover}`}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </div>
+  );
+};
 
 export default CtaButtons;
