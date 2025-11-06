@@ -29,6 +29,7 @@ import type {
   IconKey,
   ProficiencyHint,
 } from "../types/content";
+import SectionHeader from "../components/common/SectionHeader";
 
 // Map JSON iconKey -> actual icon component
 const IconMap: Record<IconKey, React.ReactNode> = {
@@ -106,7 +107,9 @@ const SegmentedToggle: React.FC<{
             key={v}
             type="button"
             className={`relative z-10 px-4 py-2 text-sm md:text-base rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/70 ${
-              isActive ? "text-gray-900" : "text-gray-300 hover:text-[var(--text)]"
+              isActive
+                ? "text-gray-900"
+                : "text-gray-300 hover:text-[var(--text)]"
             }`}
             aria-pressed={isActive}
             onClick={() => onChange(v)}
@@ -242,20 +245,15 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center bg-[var(--bg)] text-[var(--text)] px-6 py-16 md:px-8"
+      className="relative min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 md:px-8 py-20 overflow-hidden"
     >
       <div className="max-w-5xl mx-auto w-full">
+        <SectionHeader
+          title="Skills"
+          subtitle="Toggle between Hard and Soft skills."
+          align="left"
+        />
         <div className="flex flex-col items-center gap-6 mb-10 md:mb-12">
-          <h2 className="text-4xl font-bold tracking-tight text-yellow-400">
-            Skills
-          </h2>
-          <p className="text-center text-gray-300/90 max-w-2xl">
-            Toggle between{" "}
-            <span className="text-[var(--text)] font-medium">Hard</span> and{" "}
-            <span className="text-[var(--text)] font-medium">Soft</span> skills.
-            Click a category to expand—only one stays open at a time.
-          </p>
-
           <SegmentedToggle active={activeView} onChange={handleViewChange} />
         </div>
 

@@ -1,13 +1,18 @@
 import React from "react";
+import SectionHeader from "../components/common/SectionHeader";
 
 const Studies: React.FC = () => {
   return (
     <section
       id="studies"
-      className="min-h-screen flex flex-col justify-center bg-[var(--bg)] text-[var(--text)] px-8 py-16"
+      className="relative min-h-screen bg-[var(--bg)] text-[var(--text)] px-6 md:px-8 py-20 overflow-hidden"
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-yellow-400">Education</h2>
+        <SectionHeader
+          title="Studies"
+          subtitle="A solid academic foundation in computer science and engineering."
+          align="left"
+        />
 
         {/* --- Section Intro --- */}
         <p className="text-lg text-gray-300 mb-10 leading-relaxed">

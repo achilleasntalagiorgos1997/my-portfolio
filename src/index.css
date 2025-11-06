@@ -1,21 +1,31 @@
 @import "tailwindcss";
 
-
 /* ---- Design Tokens (single theme) ---- */
 :root {
-  /* Colors */
-  --bg:        oklch(15% 0.02 260);
-  --surface:   oklch(20% 0.02 260);
-  --border:    oklch(35% 0.02 260);
-  --text:      oklch(95% 0.01 260);
-  --muted:     oklch(75% 0.02 260);
+  /* neutral palette (your black–white–gray setup) */
+  --bg: oklch(8% 0 0);
+  --surface: oklch(15% 0 0);
+  --border: oklch(35% 0 0);
+  --text: oklch(95% 0 0);
+  --muted: oklch(70% 0 0);
 
-  --primary:   oklch(75% 0.21 85);
-  --on-primary:oklch(14% 0.02 260);
+  --primary: oklch(98% 0 0);
+  --on-primary: oklch(10% 0 0);
+
+  /* hero highlight colors (brand accent) */
+  --hero-from: oklch(85% 0.02 240); /* light cool gray */
+  --hero-via: oklch(92% 0.01 260); /* soft near-white gray */
+  --hero-to: oklch(98% 0 0); /* pure white end */
+
+  /* menu / UI accents */
+  --focus-ring: oklch(92% 0 0); /* high-contrast focus outline on dark bg */
+  --menu-indicator-from: oklch(78% 0 0); /* light gray start */
+  --menu-indicator-to: oklch(96% 0 0); /* near-white end */
 
   /* Typography */
-  --font-sans: "InterVariable", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: "InterVariable", system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -58,7 +68,8 @@
 }
 
 /* Base typography + canvas */
-html, body {
+html,
+body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
@@ -99,9 +110,13 @@ html, body {
   background: var(--primary);
   color: var(--on-primary);
 }
-.btn-primary:hover { filter: brightness(0.95); }
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
 
-.text-muted { color: var(--muted); }
+.text-muted {
+  color: var(--muted);
+}
 
 /* Expose tokens to Tailwind utilities via arbitrary values */
 :root {

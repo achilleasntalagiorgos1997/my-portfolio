@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import navigation from "../content/navigation.json";
 
-// Types for content file
 type NavItem = { id: string; label: string; href?: string; hidden?: boolean };
 
 const prefersReducedMotion = () =>
@@ -33,37 +32,31 @@ const Menu: React.FC = () => {
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "home");
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const itemHeightRef = useRef<number>(40); // default fallback
+  const itemHeightRef = useRef<number>(40);
 
-  // Measure item height once mounted for the sliding indicator
   useEffect(() => {
     const first = listRef.current?.querySelector(
       "li[data-menu-item]"
     ) as HTMLLIElement | null;
-    if (first) itemHeightRef.current = first.offsetHeight + 12; // include gap (mt-3)
+    if (first) itemHeightRef.current = first.offsetHeight + 12;
   }, []);
 
-  // IntersectionObserver scroll-spy
   useEffect(() => {
     const sectionEls = items
       .map((i) => document.getElementById(i.id))
       .filter(Boolean) as HTMLElement[];
-
     if (sectionEls.length === 0) return;
 
     const opts: IntersectionObserverInit = {
       root: null,
-      // highlight when section takes the middle of the viewport
       rootMargin: "-35% 0px -55% 0px",
       threshold: [0, 0.25, 0.5, 0.75, 1],
     };
 
     const observer = new IntersectionObserver((entries) => {
-      // Choose the entry with the highest intersection ratio
       const visible = entries
         .filter((e) => e.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
       if (!visible) return;
       const id = visible.target.id;
       const index = items.findIndex((i) => i.id === id);
@@ -72,7 +65,6 @@ const Menu: React.FC = () => {
       setActiveId(id);
       setActiveIndex(index);
 
-      // Update URL hash without jumping
       if (history.replaceState) {
         history.replaceState(null, "", `#${id}`);
       }
@@ -82,10 +74,8 @@ const Menu: React.FC = () => {
     return () => observer.disconnect();
   }, [items]);
 
-  // Keyboard navigation inside the menu
   const onKeyDown: React.KeyboardEventHandler<HTMLUListElement> = (e) => {
     const currentIdx = items.findIndex((i) => i.id === activeId);
-
     if (e.key === "ArrowDown") {
       e.preventDefault();
       const next = Math.min(currentIdx + 1, items.length - 1);
@@ -117,10 +107,10 @@ const Menu: React.FC = () => {
           Menu
         </h2>
 
-        {/* Sliding amber indicator */}
+        {/* Sliding neutral indicator */}
         <div
           aria-hidden
-          className="absolute left-0 top-[4.25rem] h-10 w-[3px] rounded-full bg-gradient-to-b from-amber-300 to-amber-500 shadow-[0_0_12px_rgba(251,191,36,0.35)] transition-transform duration-300"
+          className="absolute left-0 top-[4.25rem] h-10 w-[3px] rounded-full bg-gradient-to-b from-[var(--menu-indicator-from)] to-[var(--menu-indicator-to)] shadow-[0_0_12px_rgba(255,255,255,0.18)] transition-transform duration-300"
           style={{
             transform: `translateY(${activeIndex * itemHeightRef.current}px)`,
           }}
@@ -128,7 +118,7 @@ const Menu: React.FC = () => {
 
         <ul
           ref={listRef}
-          className="relative mt-1 flex flex-col gap-3 text-gray-300"
+          className="relative mt-1 flex flex-col gap-3 text-[var(--muted)]"
           role="listbox"
           onKeyDown={onKeyDown}
         >
@@ -144,13 +134,13 @@ const Menu: React.FC = () => {
                     e.preventDefault();
                     handleClick(item.id);
                   }}
-                  className={`group flex h-10 items-center gap-3 rounded-lg px-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 focus-visible:ring-offset-gray-950 ${
+                  className={`group flex h-10 items-center gap-3 rounded-lg px-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
                     isActive
-                      ? "text-amber-300"
-                      : "text-gray-300 hover:text-amber-200"
+                      ? "text-[var(--text)]"
+                      : "text-[var(--muted)] hover:text-[var(--text)]"
                   }`}
                 >
-                  <span className="text-xs tabular-nums text-[var(--muted)] group-hover:text-amber-200 w-8">
+                  <span className="text-xs tabular-nums text-[var(--muted)] group-hover:text-[var(--text)] w-8">
                     {displayNumber}
                   </span>
                   <span className="font-medium tracking-tight">
@@ -158,8 +148,8 @@ const Menu: React.FC = () => {
                   </span>
                 </a>
 
-                {/* Hairline divider for rhythm */}
-                <div className="absolute -bottom-1 left-4 right-0 h-px bg-gradient-to-r from-gray-800/70 to-transparent" />
+                {/* Divider */}
+                <div className="absolute -bottom-1 left-4 right-0 h-px bg-gradient-to-r from-[var(--border)]/70 to-transparent" />
               </li>
             );
           })}
@@ -169,7 +159,9 @@ const Menu: React.FC = () => {
         <div className="mt-4 flex items-center gap-2 text-xs text-[var(--muted)]">
           <span className="h-px w-6 bg-[var(--surface)]" />
           <span>You are here:</span>
-          <span className="text-amber-300">{items[activeIndex]?.label}</span>
+          <span className="text-[var(--text)] font-medium">
+            {items[activeIndex]?.label}
+          </span>
         </div>
       </div>
     </nav>
