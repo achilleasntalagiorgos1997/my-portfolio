@@ -5,6 +5,7 @@ import {
   FaBriefcase,
   FaBook,
   FaBrain,
+  FaEnvelope,
 } from "react-icons/fa";
 import type { NavItem } from "../../types/content";
 import SideRailIconButton from "./SideRailIconButton";
@@ -20,6 +21,8 @@ const iconForId = (id: string) => {
       return FaBook;
     case "skills":
       return FaBrain;
+    case "contact":
+      return FaEnvelope;
     default:
       return FaThLarge;
   }

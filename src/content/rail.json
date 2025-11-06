@@ -1,5 +1,4 @@
 {
-  "brand": { "label": "Achilleas N.", "href": "#home" },
   "items": [
     {
       "id": "home",
@@ -38,11 +37,6 @@
     }
   ],
   "footer": {
-    "email": {
-      "label": "Email",
-      "href": "mailto:achilleasntalagiorgos@gmail.com",
-      "icon": "mail"
-    },
     "backToTop": { "label": "Top", "href": "#home", "icon": "arrow-up" }
   }
 }

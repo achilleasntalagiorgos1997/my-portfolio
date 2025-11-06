@@ -2,5 +2,6 @@
   { "id": "home", "label": "Home", "href": "#home" },
   { "id": "experience", "label": "Experience", "href": "#experience" },
   { "id": "studies", "label": "Studies", "href": "#studies" },
-  { "id": "skills", "label": "Skills", "href": "#skills" }
+  { "id": "skills", "label": "Skills", "href": "#skills" },
+  { "id": "contact", "label": "Contact", "href": "#contact" }
 ]

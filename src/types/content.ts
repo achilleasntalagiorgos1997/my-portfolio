@@ -17,11 +17,6 @@ export interface SiteInfo {
     x?: string | null;
     website?: string | null;
   };
-  assets?: {
-    resumeUrl?: string;
-    ogImage?: string;
-    favicon?: string;
-  };
 }
 
 // --- Header config (from header.json) ---

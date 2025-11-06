@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import navigation from "../../content/navigation.json";
-import site from "../../content/site.json";
-import type { NavItem, SiteInfo } from "../../types/content";
+import type { NavItem } from "../../types/content";
 import SideRailNav from "./SideRailNav";
 import SideRailFooter from "./SideRailFooter";
 import { getHeaderOffset } from "./utils";
@@ -11,7 +10,6 @@ const SideRail: React.FC = () => {
     () => (navigation as NavItem[]).filter((i) => !i.hidden),
     []
   );
-  const email = (site as SiteInfo)?.social?.email ?? null;
 
   const [activeId, setActiveId] = useState<string>(
     typeof window !== "undefined" && window.location.hash
