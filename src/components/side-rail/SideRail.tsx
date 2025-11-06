@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import navigation from "../../content/navigation.json";
 import site from "../../content/site.json";
 import type { NavItem, SiteInfo } from "../../types/content";
+import HomeLink from "./HomeLink";
 import SideRailBrand from "./SideRailBrand";
 import SideRailNav from "./SideRailNav";
 import SideRailFooter from "./SideRailFooter";
@@ -79,7 +80,10 @@ const SideRail: React.FC = () => {
         className="pointer-events-none absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-amber-400/40 to-transparent"
       />
 
-      <SideRailBrand setActiveId={setActiveId} />
+      <div className="flex flex-row gap-4 ml-4">
+        <HomeLink setActiveId={setActiveId} />
+        <SideRailBrand setActiveId={setActiveId} />
+      </div>
       <SideRailNav
         items={items}
         activeId={activeId}

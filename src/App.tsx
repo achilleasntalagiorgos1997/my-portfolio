@@ -5,9 +5,11 @@ import Studies from "./pages/Studies";
 import Skills from "./pages/Skills";
 import SideRail from "./components/side-rail/SideRail";
 
+import { ThemeProvider } from "./contexts/ThemeContext";
+
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <SideRail />
       <main>
@@ -16,7 +18,7 @@ function App() {
         <Studies />
         <Skills />
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -1,34 +1,77 @@
 @import "tailwindcss";
 
-/* ---- Design Tokens (single theme) ---- */
+/* ---- Design Tokens (theme variables) ---- */
 :root {
-  /* neutral palette (your black–white–gray setup) */
-  --bg: oklch(8% 0 0);
-  --surface: oklch(15% 0 0);
-  --border: oklch(35% 0 0);
-  --text: oklch(95% 0 0);
-  --muted: oklch(70% 0 0);
+  /* Base theme - Dark */
+  --bg-dark: oklch(8% 0 0);
+  --surface-dark: oklch(15% 0 0);
+  --border-dark: oklch(35% 0 0);
+  --text-dark: oklch(95% 0 0);
+  --muted-dark: oklch(70% 0 0);
 
-  --primary: oklch(98% 0 0);
-  --on-primary: oklch(10% 0 0);
+  --primary-dark: oklch(98% 0 0);
+  --on-primary-dark: oklch(10% 0 0);
 
-  /* hero highlight colors (brand accent) */
+  /* Light theme */
+  --bg-light: oklch(98% 0 0);
+  --surface-light: oklch(95% 0 0);
+  --border-light: oklch(75% 0 0);
+  --text-light: oklch(15% 0 0);
+  --muted-light: oklch(45% 0 0);
+
+  --primary-light: oklch(15% 0 0);
+  --on-primary-light: oklch(98% 0 0);
+
+  /* Theme-aware variables */
+  --bg: var(--bg-dark);
+  --surface: var(--surface-dark);
+  --border: var(--border-dark);
+  --text: var(--text-dark);
+  --muted: var(--muted-dark);
+  --primary: var(--primary-dark);
+  --on-primary: var(--on-primary-dark);
+}
+
+/* Light theme class */
+[data-theme="light"] {
+  --bg: var(--bg-light);
+  --surface: var(--surface-light);
+  --border: var(--border-light);
+  --text: var(--text-light);
+  --muted: var(--muted-light);
+  --primary: var(--primary-light);
+  --on-primary: var(--on-primary-light);
+
+  /* hero highlight colors (brand accent) - light theme */
+  --hero-from: oklch(65% 0.2 240); /* darker cool blue */
+  --hero-via: oklch(75% 0.15 260); /* medium blue */
+  --hero-to: oklch(85% 0.1 280); /* light purple */
+
+  /* menu / UI accents - light theme */
+  --focus-ring: oklch(40% 0 0);
+  --menu-indicator-from: oklch(30% 0 0);
+  --menu-indicator-to: oklch(15% 0 0);
+
+  --hint-strong: oklch(25% 0 0);
+  --hint-medium: oklch(35% 0 0);
+  --hint-weak: oklch(45% 0 0);
+}
+
+/* Dark theme - inherits root variables */
+[data-theme="dark"] {
+  /* hero highlight colors (brand accent) - dark theme */
   --hero-from: oklch(85% 0.02 240); /* light cool gray */
   --hero-via: oklch(92% 0.01 260); /* soft near-white gray */
   --hero-to: oklch(98% 0 0); /* pure white end */
 
-  /* menu / UI accents */
-  --focus-ring: oklch(92% 0 0); /* high-contrast focus outline on dark bg */
-  --menu-indicator-from: oklch(78% 0 0); /* light gray start */
-  --menu-indicator-to: oklch(96% 0 0); /* near-white end */
+  /* menu / UI accents - dark theme */
+  --focus-ring: oklch(92% 0 0);
+  --menu-indicator-from: oklch(78% 0 0);
+  --menu-indicator-to: oklch(96% 0 0);
 
-  --toggle-active-bg: oklch(98% 0 0);
-  --toggle-active-fg: oklch(8% 0 0);
-  --toggle-inactive-fg: oklch(70% 0 0);
-
-  --hint-strong: oklch(95% 0 0); /* Proficient */
-  --hint-medium: oklch(82% 0 0); /* Working */
-  --hint-weak: oklch(70% 0 0); /* default/other */
+  --hint-strong: oklch(95% 0 0);
+  --hint-medium: oklch(82% 0 0);
+  --hint-weak: oklch(70% 0 0);
 
   /* Typography */
   --font-sans: "InterVariable", system-ui, -apple-system, Segoe UI, Roboto,
