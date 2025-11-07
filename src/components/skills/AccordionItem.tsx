@@ -17,7 +17,6 @@ const accordionVariants = {
   expanded: { height: "auto", opacity: 1 },
 };
 
-// Helper: highlight words like “Proficient” or “Working”
 const highlightProficiency = (text: string) => {
   const regex =
     /\b(Proficient|Working|Intermediate|Expert|Advanced|Beginner)\b/gi;
@@ -121,11 +120,7 @@ const AccordionItem: React.FC<Props> = ({
               <ul className="flex flex-wrap gap-2.5">
                 {category.items.map((it: SkillItem) => (
                   <li key={it.label}>
-                    <SkillChip
-                      label={it.label}
-                      icon={it.iconKey ? null : null}
-                      hint={it.hint}
-                    />
+                    <SkillChip label={it.label} hint={it.hint} />
                   </li>
                 ))}
               </ul>

@@ -19,6 +19,27 @@ export interface SiteInfo {
   };
 }
 
+/** Icon keys are strings in JSON; mapped to real components at runtime */
+export type IconKey =
+  | "layout" // Frontend
+  | "server" // Backend
+  | "gitBranch" // Versioning
+  | "database" // Databases
+  | "flask" // Testing
+  | "messageSquare" // Communication
+  | "users" // Collaboration
+  | "puzzle" // Problem Solving
+  | "repeat" // Adaptability
+  | "shieldCheck" // Ownership
+  | "box"
+  | "type"
+  | "fileCode"
+  | "sparkles"
+  | "wrench"
+  | "terminal"
+  | "cpu"
+  | "none"; // fallback when you don't want an icon
+
 // --- Header config (from header.json) ---
 export interface HeaderConfig {
   title: string;
@@ -111,6 +132,7 @@ export interface SkillCategory {
   title: string;
   description?: string;
   items: SkillItem[];
+  iconKey: IconKey;
 }
 
 export interface SkillsContent {
